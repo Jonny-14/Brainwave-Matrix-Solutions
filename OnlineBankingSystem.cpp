@@ -1,21 +1,18 @@
 #include <iostream>
 #include <vector>
 #include <string>
-#include <iomanip> // For formatting output
+#include <iomanip> 
 
 using namespace std;
 
-// Structure to hold account details
 struct Account {
     string accountHolderName;
     int accountNumber;
     double balance;
 };
 
-// Global vector to store multiple accounts
 vector<Account> accounts;
 
-// Function prototypes
 void displayMenu();
 void createAccount();
 void depositFunds();
@@ -68,7 +65,7 @@ void displayMenu() {
 void createAccount() {
     Account newAccount;
     cout << "Enter account holder's name: ";
-    cin.ignore(); // To ignore leftover newline from previous input
+    cin.ignore();
     getline(cin, newAccount.accountHolderName);
 
     cout << "Enter initial deposit amount: ";
@@ -79,7 +76,7 @@ void createAccount() {
         return;
     }
 
-    newAccount.accountNumber = accounts.size() + 1; // Generate account number
+    newAccount.accountNumber = accounts.size() + 1; 
     accounts.push_back(newAccount);
 
     cout << "Account created successfully!" << endl;
